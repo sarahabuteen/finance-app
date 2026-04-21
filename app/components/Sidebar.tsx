@@ -60,7 +60,8 @@ export default function Sidebar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative group flex items-center gap-200 py-200 rounded-r-xl transition-colors ${
+                aria-current={isActive ? "page" : undefined}
+                className={`relative group flex items-center gap-200 py-200 rounded-r-xl transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white outline-none ${
                   minimized ? "px-250 justify-center" : "pl-400 pr-200"
                 } ${
                   isActive
@@ -95,7 +96,7 @@ export default function Sidebar() {
         {/* Minimize toggle */}
         <button
           onClick={() => setMinimized(!minimized)}
-          className={`flex items-center gap-200 text-grey-300 hover:text-white transition-colors py-300 ${
+          className={`flex items-center gap-200 text-grey-300 hover:text-white transition-colors py-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white outline-none ${
             minimized ? "px-250 justify-center" : "px-400"
           }`}
         >
@@ -122,7 +123,8 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`relative flex flex-col items-center gap-50 pt-200 pb-150 px-300 rounded-t-xl overflow-hidden transition-colors ${
+              aria-current={isActive ? "page" : undefined}
+              className={`relative flex flex-col items-center gap-50 pt-200 pb-150 px-300 rounded-t-xl overflow-hidden transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white outline-none ${
                 isActive
                   ? "bg-beige-100 text-grey-900"
                   : "text-grey-300 hover:text-white"
@@ -158,7 +160,8 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`relative flex items-center justify-center pt-150 pb-200 px-300 rounded-t-xl overflow-hidden transition-colors ${
+              aria-current={isActive ? "page" : undefined}
+              className={`relative flex items-center justify-center pt-150 pb-200 px-300 rounded-t-xl overflow-hidden transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white outline-none ${
                 isActive
                   ? "bg-beige-100"
                   : "text-grey-300 hover:text-white"
